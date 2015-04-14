@@ -33,6 +33,7 @@ public class SheimiFragmentActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         BasicFunctions.setActiveActivity(this);
+        forceEnglist();
     }
 
     @Override
@@ -260,4 +261,15 @@ public class SheimiFragmentActivity extends Activity {
         return mImageLoader;
     }
     /* ImageCache End */
+
+
+    /* force Englist */
+    private void forceEnglist(){
+        Resources res = getResources();
+        Configuration conf = res.getConfiguration();
+        conf.locale = Locale.ENGLISH;
+        res.updateConfiguration( conf , res.getDisplayMetrics() );
+    }
+    /* force Englist End */
+
 }
